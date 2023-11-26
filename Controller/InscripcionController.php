@@ -39,7 +39,7 @@ class InscripcionController
     }
 
     public function editar()
-    {  //Primer mostrar informacion paso 1
+    {  //Primero mostrar informacion paso 1
         $idInscripcion = $_GET['idInscripcion'];
         $inscripcion = InscripcionModel::editarInscripcion($idInscripcion);
         return $inscripcion;

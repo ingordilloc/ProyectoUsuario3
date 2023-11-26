@@ -11,7 +11,6 @@ class CategoriaController
     public static function mostrar()
     {
         $inscripcion = CategoriaModel::mostrarCategoria();
-        //Aqui se harian los calculos
         return $inscripcion;
     }
 

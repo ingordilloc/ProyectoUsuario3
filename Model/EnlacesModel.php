@@ -16,6 +16,8 @@ class EnlacesModel{
             "inscripcioncategoria" => "View/inscripcioncategoria.php",
             "crearUsuarioEstudiante" => "View/nuevoUsuario.php",
             "grafico" => "View/grafica.php",
+            "mostrarTablas" => "View/mostrarTablas.php",
+            "PDF" => "View/pdf.php",
             default => "View/error.php"
         };
         return $modulo;

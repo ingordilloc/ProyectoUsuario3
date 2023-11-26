@@ -1,0 +1,15 @@
+{
+    "name": "gordillocastro/enlacesv5",
+    "description": "Manejo de usuarios y cursos con PHP",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gordillocastro\\Enlacesv5\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "fpdf/fpdf": "dev-master"
+    }
+}

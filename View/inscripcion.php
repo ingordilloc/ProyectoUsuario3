@@ -36,8 +36,6 @@ if(!empty($_SESSION['id']) && !empty($_SESSION['rol']== '1') || !empty($_SESSION
             </div>
         </div>
 
-
-
         <div class="form-group">
             <div class="row mt-3">
                 <button class="btn btn-primary">Enviar</button>

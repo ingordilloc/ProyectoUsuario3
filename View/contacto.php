@@ -1,8 +1,13 @@
+<?php
+use Controller\FormularioController;
+$formulario = new FormularioController();
+$formulario->procesarFormulario();
+?>
 <h1>Pagina de Contacto</h1>
 
 <div class="container">
 
-    <form>
+    <form method="POST">
         <div class="form-group">
             <div class="row mb-3">
                 <div class="col-2"><label>Email</label>

@@ -11,7 +11,7 @@ class CategoriaModel{
     public static function mostrarCategoria(){
         $stmt = ConexionModel::conectar()->prepare("SELECT * FROM categoria");
         $stmt->execute();
-        return $stmt->fetchAll();
+        return $stmt->fetchAll();//\PDO::FETCH_ASSOC
 
     }
 

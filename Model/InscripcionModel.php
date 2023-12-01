@@ -34,6 +34,12 @@ class InscripcionModel{
         return $stmt->fetchAll();
 
     }
+    public static function mostrarInscritos(){
+        $stmt = ConexionModel::conectar();
+        $resultado = $stmt->query("SELECT usuario.id as usuario, usuario.nombres as nombre, curso FROM usuario INNER JOIN inscripcion on inscripcion.fkUsuario = usuario.id INNER JOIN curso on curso.id = inscripcion.fkCurso ");
+        return $resultado;
+
+    }
 
 
     public static function editarInscripcion($idInscripcion){

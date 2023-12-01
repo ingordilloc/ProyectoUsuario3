@@ -1,11 +1,12 @@
 <?php
-
 namespace Controller;
-
 use Model\CategoriaModel;
+use Controller\PDF;
+use Controller\Trait\Categoria\pdfCategoria;
 
 class CategoriaController
 {
+    use pdfCategoria;
     
 
     public static function mostrar()
@@ -20,8 +21,6 @@ class CategoriaController
             return $cursos;
         }
     }
-
-
 
 }
 ?>

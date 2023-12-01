@@ -30,6 +30,12 @@ class UsuarioModel{
         }
     }
 
+    public static function mostrarUsuarioPdf(){
+        $stmt = ConexionModel::conectar()->prepare("SELECT * FROM usuario");
+        $stmt->execute(); 
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);       
+    }
+
 
 
 }

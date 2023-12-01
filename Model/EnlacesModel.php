@@ -18,6 +18,8 @@ class EnlacesModel{
             "grafico" => "View/grafica.php",
             "mostrarTablas" => "View/mostrarTablas.php",
             "PDF" => "View/pdf.php",
+            "pdfCategoria" => "View/categorias/pdfCategorias.php",
+            "pdfUsuarios" => "View/pdfUsuarios.php",
             default => "View/error.php"
         };
         return $modulo;

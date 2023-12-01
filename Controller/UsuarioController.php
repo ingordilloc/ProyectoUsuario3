@@ -3,8 +3,11 @@
 namespace Controller;
 
 use Model\UsuarioModel;
+use Controller\Trait\Usuario\pdfUsuario;
+use Controller\Trait\Usuario\listPdfUsuario;
 
 class UsuarioController{
+    use pdfUsuario,listPdfUsuario;
 
     public function login(){
         $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_FULL_SPECIAL_CHARS);

@@ -30,7 +30,7 @@ $capturaEnlace = new PaginaController();
 
 <body class="">
 <?php
-require_once("navbar.php");
+require_once("paginas/navbar.php");
 ?>
     <div class="container">
         <?php

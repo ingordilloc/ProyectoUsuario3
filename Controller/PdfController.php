@@ -1,11 +1,14 @@
 <?php
 namespace Controller;
 require 'vendor/autoload.php';
-use Fpdf\Fpdf as FpdfFpdf;
+use Dompdf\Dompdf;
+use Controller\UsuarioController;
 
-use Model\InscripcionModel;
+//use Fpdf\Fpdf as FpdfFpdf;
 
+//use Model\InscripcionModel;
 
+/* Version de PDF ejemplo 1 y listado de usuarios-cursos
 class PDF extends FpdfFpdf //extends heredo la clase a las librerias
 {
 // Page header
@@ -54,7 +57,7 @@ class PdfController{
         
         ob_end_clean();
     $pdf->Output();
-    }*/
+    }
     public function generate() { 
         
         
@@ -77,8 +80,38 @@ class PdfController{
         ob_end_clean();
         $pdf->Output();
     }
-
 }
+*/
+class PdfController{
+    public function generate() { 
+        $usuarios = new UsuarioController;
+        $listUsuarios = $usuarios->listarUsuarios();
+        $dompdf = new Dompdf();
+        $headerTable = '<h1>Listado de Participantes</h1>
+        <center><p>Alumnos Inscritos</p></center><br>
+        <table style="border: 1px solid black">
+        <tr>Nombres</tr>
+        <tr>Apellidos</tr>
+        <tr>';
+        $footerTable = '</table>';
+        $bodyTable="";
+        foreach( $listUsuarios as $usuario){
+            $bodyTable = $bodyTable."<tr><td>".$usuario['nombres']."</td>"."<td>".$usuario['apellidos']."</td></tr>";
+
+        }
+        $completeTable = $headerTable.$bodyTable.$footerTable;
+        $dompdf->loadHtml($completeTable);
+        $dompdf->render();
+        header("Content-type: application/pdf");
+        header("Content-Disposition: inline; filename=documento.pdf");
+        ob_end_clean();
+        //echo $dompdf->output();
+        $dompdf->stream();
+    }
+}
+?>
+
+
 
 
 
